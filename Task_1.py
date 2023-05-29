@@ -1,4 +1,4 @@
-def check_winner(game):
+def winner_game(game):
     # Проверяем горизонтальные линии
     for row in game:
         if row[0] == row[1] == row[2] != ' ':
@@ -10,7 +10,7 @@ def check_winner(game):
             return game[0][column]
 
     # Проверяем диагонали
-    if game[0][0] == game[1][1] ==game[2][2] != ' ':
+    if game[0][0] == game[1][1] == game[2][2] != ' ':
         return game[0][0]
 
     if game[0][2] == game[1][1] == game[2][0] != ' ':
@@ -29,6 +29,12 @@ game1 = [
     [' ', 'X', 'O'],
     [' ', 'X', 'X']
 ]
+
+winner = winner_game(game1)
+if winner:
+    print('Победитель:', winner)
+else:
+    print('Игра не завершена')
 '''
 game2 = [
     ['O', ' ', 'O'],
@@ -48,9 +54,8 @@ game4 = [
     ['O', 'O', 'X']
 ]
 '''
-winner = check_winner(game1)
+winner = winner_game(game1)
 if winner:
     print('Победитель:', winner)
 else:
     print('Игра не завершена')
-  

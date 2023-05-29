@@ -21,7 +21,6 @@ def find_missing_number(arr):
 
     # заполняем "подсчёт"
     for num in arr:
-        print(num - 1)
         counts[num - 1] += 1
 
 
